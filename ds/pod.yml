@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lumpy-koala
+spec:
+  containers:
+  - name: checker
+    image: nginx
+    volumeMounts:
+    - name: workdir
+      mountPath: /workdir
+    livenessProbe:
+      exec:
+        command:
+        - cat
+        - /workdir/calm.txt
+  initContainers:
+  - name: install
+    image: busybox
+    command:
+    - touch
+    - /workdir/calm.txt
+    volumeMounts:
+    - name: workdir
+      mountPath: /workdir 
+  volumes:
+  - name: workdir
+    emptyDir: {}
