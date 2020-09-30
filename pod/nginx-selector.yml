@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    env: test
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: IfNotPresent
+  nodeSelector:
+    disk: ssd
+
+
+# label the node
+# kubectl label node minikube disk=ssd
+# create the pod
+# remove the label
+# kubectl label node minikube disk-
