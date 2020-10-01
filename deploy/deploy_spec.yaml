@@ -1,0 +1,27 @@
+# kubectl create deployment kual00201 --image=redis --dry-run -o yaml > deploy_spec.yaml
+# use --dry-run to clean up objects after generation
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: kual00201
+    app_enb_stage: dev
+  name: kual00201
+spec:
+  replicas: 7
+  selector:
+    matchLabels:
+      app: kual00201
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: kual00201
+    spec:
+      containers:
+      - image: redis
+        name: redis
+        resources: {}
+status: {}
