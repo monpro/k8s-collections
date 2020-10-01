@@ -1,0 +1,1 @@
+kubectl expose pod/frontend --name=front-end-service --type=NodePort --port=80
