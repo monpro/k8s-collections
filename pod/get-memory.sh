@@ -1,0 +1,1 @@
+kubectl top pods -l app=nginx-app
