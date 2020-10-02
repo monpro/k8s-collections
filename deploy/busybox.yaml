@@ -1,0 +1,14 @@
+#kubectl create deployment nginx-dns --image=nginx
+#kubectl expose deployment nginx-dns --name=nginx-dns --port=80
+#kubectl create -f busybox.yaml
+#kubectl exec -it busybox -- /bin/sh
+#nslookup nginx-dns
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox
+spec:
+  containers:
+  - name: busybox
+    image: busybox:1.28
+    command: ["sleep", "876000"]
