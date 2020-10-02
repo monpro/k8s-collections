@@ -1,0 +1,1 @@
+etcdctl snapshot save --endpoints=https://127.0.0.0.1:2379 --cert=/opt/KUCM00302/etcdclient.crt --cacert=/opt/KUCM00302/ca.crt --key=/opt/KUCM00302/etcd-client.key test.db
